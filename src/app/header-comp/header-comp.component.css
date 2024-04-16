@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.headerContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 2px solid green; */
+}
+.headerContainer>.title{
+    height: fit-content;
+}
+.title>h1{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 0;
+}
+.search{
+    position: relative;
+}
+.searchBar{
+    padding: 10px;
+    width: 20vw;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid gray;
+}
+.searchBar::placeholder{
+    font-size: 15px;
+
+}
+.search>.searchIcon{
+    position: absolute;
+    top: 8px;
+    right: 4px;
+}
+.addRecipe{
+    background-color: green;
+    padding: 10px;
+    color: white;
+    border-radius: 7px;
+    font-size: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}

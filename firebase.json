@@ -1,0 +1,11 @@
+{
+  "hosting": [
+    {
+      "target": "angular-recipe-app",
+      "source": ".",
+      "frameworksBackend": {
+        "region": "asia-east1"
+      }
+    }
+  ]
+}

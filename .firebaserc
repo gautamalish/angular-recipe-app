@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ang-recipe-44ce0": {
+      "hosting": {
+        "angular-recipe-app": [
+          "ang-recipe-44ce0"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ang-recipe-44ce0"
+  }
+}
