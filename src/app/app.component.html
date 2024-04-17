@@ -1,11 +1,29 @@
 <div class="main">
     <div class="header">
-        <app-header-comp></app-header-comp>
+        <app-header-comp (addRecipeClicked)="changeModalDisplay('block')"></app-header-comp>
+        <!-- (addRecipeClicked)="changeModalDisplay('block')" -->
     </div>
     <div class="body">
-        <!-- <app-body [showAddRecipe]="showAddRecipe"></app-body> -->
+        <app-body></app-body>
     </div>
+    <!-- modal-dialog modal-dialog-centered -->
+    <div class="modal fade modal-dialog modal-dialog-centered" id="exampleModal" #exampleModal tabindex="3" aria-labelledby="exampleModalLabel"  aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add New Recipe</h5>
+              <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" #close aria-label="Close" (click)="onCloseClick()"></button>
+            </div>
+            <div class="modal-body">
+              <input type="text" placeholder="Title">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal" #close (click)="onCloseClick()" >Close</button>
+              <button type="button" class="btn btn-success" >Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>
 
-<router-outlet></router-outlet>
-<!-- (showAddRecipeChange)="onShowAddRecipeChange($event)" -->
+<!-- <router-outlet></router-outlet> -->

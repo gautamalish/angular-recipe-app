@@ -1,7 +1,18 @@
 .main{
     width: 80vw;
     margin: auto;
-    border: 2px solid red;
     margin-top: 15px;
     padding: 10px;
+    border: 2px solid red;
+}
+.modal-footer{
+    display: flex;
+    justify-content: space-around;
+}
+.modal-footer>button{
+    width: 80px;
+    text-align: center;
+}
+.modal-footer:first-child{
+    background-color: red;
 }

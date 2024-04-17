@@ -1,0 +1,27 @@
+.titleImg{
+    width: 100%;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+}
+.top{
+    width: fit-content;
+    flex: 2;
+    margin: 0;
+    padding: 0;
+}
+.bodyContent{
+    display: flex;
+    padding: 10px;
+    text-align: justify;
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0,0,0,0.47);
+    box-shadow: 2px 4px 10px 1px rgba(154, 153, 153, 0.47);
+}
+.bottom{
+    padding-left: 10px;
+    flex: 5;
+}
+.body{
+    margin-top: 40px;
+}

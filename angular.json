@@ -25,9 +25,11 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap/scss/bootstrap.scss",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.min.js"],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -53,13 +55,7 @@
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.development.ts"
-                }
-              ]
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"

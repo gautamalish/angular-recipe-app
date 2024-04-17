@@ -1,7 +1,8 @@
-import { Component,Input,Output,EventEmitter } from '@angular/core';
+import { Component,Input,Output,EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AppComponent } from '../app.component';
 // import { AddRecipeComponent } from '../add-recipe/add-recipe.component';
 
 @Component({
@@ -13,9 +14,8 @@ import { CommonModule } from '@angular/common';
 })
 
 export class HeaderCompComponent {
-
-  // @Output() showAddRecipeChange:EventEmitter<boolean> = new EventEmitter<boolean>();
-  // AddRecipe(){
-  //   this.showAddRecipeChange.emit(true);
-  // }
+  @Output() addRecipeClicked: EventEmitter<string> = new EventEmitter<string>();
+  addRecipe() {
+    this.addRecipeClicked.emit();
+  }
 }
