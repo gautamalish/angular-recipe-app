@@ -1,18 +1,6 @@
 <div class="main">
     <div class="header">
-        <!-- <div class="headerContainer">
-    <div class="title">
-        <h1>Recipe App</h1>
-    </div>
-    <div class="search">
-        <input type="text" placeholder="Search for recipes" class="searchBar">
-        <mat-icon class="searchIcon">search</mat-icon>
-    </div>
-    <div>
-        <button class="addRecipe" (click)="changeModalDisplay()">Add Recipe</button>
-    </div>
-</div> -->
-<app-header-comp (addRecipeClicked)="changeModalDisplay()"></app-header-comp>
+        <app-header-comp (addRecipeClicked)="changeModalDisplay()" (searchTextChanged)="onSearchTextEntered($event)"></app-header-comp>
     </div>
     
     <div class="body">
@@ -56,9 +44,9 @@
               </div>
             </div>
           </div>
-          <div class="body">
+          <div class="item-body" *ngFor="let item of recipeList; let i = index" >
             @if(recipeList.length!==0){
-                <div class="bodyContent" *ngFor="let item of recipeList; let i = index">
+                <div class="bodyContent" *ngIf="searchText === '' || item.title.toLowerCase().includes(searchText)" style=" cursor: pointer;">
                     <div class="top">
                         <img src="{{item.imageUrl}}" alt="lizard" class="titleImg">
                     </div>

@@ -19,10 +19,10 @@ export class AppComponent implements OnInit{
   
   showAddRecipe: boolean = false;
   title = 'RecipeApp';
+  searchText:string="";
   detailsObj:RecipeDetails=new RecipeDetails();
   recipeList:RecipeDetails[]=[]
   filteredRecipeList: RecipeDetails[] = [];
-  searchText:string="";
   ngOnInit(): void {
     const localData=localStorage.getItem("localRecipe")
     if(localData!=null){
@@ -36,6 +36,10 @@ export class AppComponent implements OnInit{
       this.exampleModal.nativeElement.style.display="block"
     }
   }
+  onSearchTextEntered(value:string){
+    this.searchText=value
+     console.log(this.searchText)
+  }
   onCloseClick(){
     this.detailsObj=new RecipeDetails();
     if(this.exampleModal){
@@ -46,11 +50,6 @@ export class AppComponent implements OnInit{
     this.detailsObj=item;
     this.changeModalDisplay()
   }
-  // filterRecipes() {
-  //   this.filteredRecipeList = this.recipeList.filter(item =>
-  //     item.title.toLowerCase().includes(this.searchText.toLowerCase())
-  //   );
-  // }
 
   addRecipe(){
     const isLocalPresent=localStorage.getItem("localRecipe")

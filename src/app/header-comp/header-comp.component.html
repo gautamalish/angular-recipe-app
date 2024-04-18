@@ -3,7 +3,7 @@
         <h1>Recipe App</h1>
     </div>
     <div class="search">
-        <input type="text" placeholder="Search for recipes" class="searchBar">
+        <input type="text" placeholder="Search for recipes" class="searchBar" [(ngModel)]="searchText" (input)="onSearchTextChange()">
         <mat-icon class="searchIcon">search</mat-icon>
     </div>
     <div>
