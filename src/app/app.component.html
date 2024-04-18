@@ -4,26 +4,70 @@
         <!-- (addRecipeClicked)="changeModalDisplay('block')" -->
     </div>
     <div class="body">
-        <app-body></app-body>
-    </div>
-    <!-- modal-dialog modal-dialog-centered -->
-    <div class="modal fade modal-dialog modal-dialog-centered" id="exampleModal" #exampleModal tabindex="3" aria-labelledby="exampleModalLabel"  aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Add New Recipe</h5>
-              <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" #close aria-label="Close" (click)="onCloseClick()"></button>
-            </div>
-            <div class="modal-body">
-              <input type="text" placeholder="Title">
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal" #close (click)="onCloseClick()" >Close</button>
-              <button type="button" class="btn btn-success" >Add</button>
+        <div class="modal" id="exampleModal" #exampleModal tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;"  aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add New Recipe</h5>
+                  <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" #close aria-label="Close" (click)="onCloseClick()"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="inputs">
+                        <div class="fileLabelDiv">
+                            <label for="file">
+                                <div class="fileImg" style="cursor: pointer; font-size: 20px; box-sizing: border-box;">
+                                    Image: 
+                                    <mat-icon style="cursor: pointer;">
+                                        create_new_folder
+                                    </mat-icon>
+                                </div>
+                            </label>
+                        </div>
+                        <input type="file" id="file" style="display: none;">
+                        <div class="imageUrlDiv">
+                            <input type="text" placeholder="Image Url" [(ngModel)]="detailsObj.imageUrl">
+                        </div>
+                        <div class="titleDiv" style="margin: auto;width: fit-content;margin-bottom: 10px;">
+                            <input type="text" placeholder="Title" name="title" [(ngModel)]="detailsObj.title" style="width: 220px;padding: 10px;outline: none;border-radius: 7px;border: 1px solid gray;">
+                        </div>
+                        <div class="left-right">
+                            <div class="left">
+                                <textarea name="description" id="description" cols="22" rows="5" placeholder="Description" [(ngModel)]="detailsObj.description"></textarea>
+                                <textarea name="ingredients" id="ingredients" cols="22" rows="5" placeholder="Ingredients" [(ngModel)]="detailsObj.ingredients"></textarea>
+                            </div>
+                            <div class="right">
+                                <textarea name="instructions" id="instructions" cols="22" rows="5" placeholder="Instructions" [(ngModel)]="detailsObj.instructions"></textarea>
+                                <textarea name="nutrition" id="nutrition" cols="22" rows="5" placeholder="Nutritional Facts" [(ngModel)]="detailsObj.nutrition"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal" #close (click)="onCloseClick()" >Close</button>
+                  <button type="button" class="btn btn-success" (click)="addRecipe()">Add</button>
+                </div>
+              </div>
             </div>
           </div>
+          <div class="body">
+                <div class="bodyContent" *ngFor="let item of recipeList; let i = index">
+                    <div class="top">
+                        <img src="{{item.imageUrl}}" alt="lizard" class="titleImg">
+                    </div>
+                    <div class="bottom">
+                        <h1 class="title">{{item.title}}</h1>
+                        <p>{{item.description}}</p>
+                        <div class="buttons">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            
         </div>
-      </div>
+    </div>
+    
 </div>
+
 
 <!-- <router-outlet></router-outlet> -->
