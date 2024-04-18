@@ -1,10 +1,22 @@
 <div class="main">
     <div class="header">
-        <app-header-comp (addRecipeClicked)="changeModalDisplay('block')"></app-header-comp>
-        <!-- (addRecipeClicked)="changeModalDisplay('block')" -->
+        <!-- <div class="headerContainer">
+    <div class="title">
+        <h1>Recipe App</h1>
     </div>
+    <div class="search">
+        <input type="text" placeholder="Search for recipes" class="searchBar">
+        <mat-icon class="searchIcon">search</mat-icon>
+    </div>
+    <div>
+        <button class="addRecipe" (click)="changeModalDisplay()">Add Recipe</button>
+    </div>
+</div> -->
+<app-header-comp (addRecipeClicked)="changeModalDisplay()"></app-header-comp>
+    </div>
+    
     <div class="body">
-        <div class="modal" id="exampleModal" #exampleModal tabindex="-1" aria-labelledby="exampleModalLabel" style="display: none;"  aria-hidden="true">
+        <div class="modal" id="exampleModal" #exampleModal tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
@@ -13,17 +25,6 @@
                 </div>
                 <div class="modal-body">
                     <div class="inputs">
-                        <div class="fileLabelDiv">
-                            <label for="file">
-                                <div class="fileImg" style="cursor: pointer; font-size: 20px; box-sizing: border-box;">
-                                    Image: 
-                                    <mat-icon style="cursor: pointer;">
-                                        create_new_folder
-                                    </mat-icon>
-                                </div>
-                            </label>
-                        </div>
-                        <input type="file" id="file" style="display: none;">
                         <div class="imageUrlDiv">
                             <input type="text" placeholder="Image Url" [(ngModel)]="detailsObj.imageUrl">
                         </div>
@@ -44,26 +45,38 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-danger" data-bs-dismiss="modal" #close (click)="onCloseClick()" >Close</button>
-                  <button type="button" class="btn btn-success" (click)="addRecipe()">Add</button>
+                  @if(detailsObj.id==0){
+                    <button type="button" class="btn btn-success" (click)="addRecipe()">Add</button>
+                }
+                @else{
+                      <button type="button" class="btn btn-primary" (click)="updateRecipe()">Update</button>
+                  }
+                  
                 </div>
               </div>
             </div>
           </div>
           <div class="body">
+            @if(recipeList.length!==0){
                 <div class="bodyContent" *ngFor="let item of recipeList; let i = index">
                     <div class="top">
                         <img src="{{item.imageUrl}}" alt="lizard" class="titleImg">
                     </div>
                     <div class="bottom">
-                        <h1 class="title">{{item.title}}</h1>
+                        <h1 class="title" style="font-size: 22px; font-weight: bold;">{{item.title}}</h1>
                         <p>{{item.description}}</p>
                         <div class="buttons">
-                            <button class="edit">Edit</button>
-                            <button class="delete">Delete</button>
+                            <button class="edit btn btn-primary" (click)="onEdit(item)">Edit</button>
+                            <button class="delete btn btn-danger" (click)="onDelete(item)">Delete</button>
                         </div>
                     </div>
                 </div>
-            
+            }
+            @else{
+                <div class="noRecipe">
+                    <p>No Recipe Found. Create New Recipe.</p>
+                </div>
+            }
         </div>
     </div>
     
