@@ -1,14 +1,20 @@
 <div class="headerContainer">
-    <div class="title">
-        <h1>Recipe App</h1>
-    </div>
-    <div class="search">
-        <input type="text" placeholder="Search for recipes" class="searchBar" [(ngModel)]="searchText" (input)="onSearchTextChange()">
-        <mat-icon class="searchIcon">search</mat-icon>
-    </div>
-    <div>
-        <button class="addRecipe" (click)="addRecipe()">Add Recipe</button>
-    </div>
+  <div class="title">
+    <h1>Recipe App</h1>
+  </div>
+  <div class="search">
+    <input
+      type="text"
+      placeholder="Search for recipes"
+      class="searchBar"
+      [(ngModel)]="searchText"
+      (input)="onSearchTextChange()"
+    />
+    <mat-icon class="searchIcon">search</mat-icon>
+  </div>
+  <div>
+    <button class="addRecipe" (click)="addRecipe()">Add Recipe</button>
+  </div>
 </div>
 
 <!-- (click)="addRecipe()" -->
