@@ -22,6 +22,7 @@ import { Route,RouterLink,Router } from '@angular/router';
 })
 export class FrontPageComponent implements OnInit{
   searchText: string = '';
+  error:string="";
   constructor(private route:Router){
     
   }
@@ -52,6 +53,7 @@ export class FrontPageComponent implements OnInit{
     );
   }
   onCloseClick() {
+    this.error=""
     this.detailsObj = new RecipeDetails();
     if (this.exampleModal) {
       this.exampleModal.nativeElement.style.display = 'none';
@@ -64,9 +66,14 @@ export class FrontPageComponent implements OnInit{
   }
 
   addRecipe() {
-    
+    if(!this.detailsObj.imageUrl || !this.detailsObj.title || !this.detailsObj.description || !this.detailsObj.ingredients || !this.detailsObj.instructions || !this.detailsObj.nutrition){
+      this.error="Please fill up all the fields";
+      return;
+    }
+    this.error=""
     const isLocalPresent = localStorage.getItem('localRecipe');
     if (isLocalPresent != null) {
+      this.error=""
       const oldArray = JSON.parse(isLocalPresent);
       const maxId = oldArray.reduce((max:any, currentRecipe:any) => Math.max(max, currentRecipe.id), 0);
       this.detailsObj.id=maxId+1
@@ -74,6 +81,7 @@ export class FrontPageComponent implements OnInit{
       this.recipeList = oldArray;
       localStorage.setItem('localRecipe', JSON.stringify(oldArray));
     } else {
+      this.error=""
       const newArr = [];
       newArr.push(this.detailsObj);
       this.detailsObj.id = 1;

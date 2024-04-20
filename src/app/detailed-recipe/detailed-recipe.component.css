@@ -1,0 +1,51 @@
+.recipeList {
+  /* border: 2px solid green; */
+  width: 40vw;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(154, 154, 153, 0.47);
+  margin-bottom: 10px !important;
+}
+.detailedPage {
+  width: 80vw;
+  margin: auto;
+  padding: 20px;
+}
+.recipeTexts {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  /* -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 10px 1px rgba(67, 236, 95, 0.47); */
+  border: 2px dotted gray;
+  padding: 10px;
+  border-radius: 7px;
+}
+.recipeTexts > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  /* align-items: center; */
+}
+.recipeTexts > div>ul{
+    width: 100%;
+}
+.recipeTexts > div>ul>li{
+    width: 100%;
+    word-break: break-all;
+}
+.backButton {
+  display: flex;
+  justify-content: end;
+  width: 40vw;
+  margin: auto;
+  margin-bottom: 10px;
+}
