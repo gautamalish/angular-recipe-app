@@ -13,9 +13,6 @@
     width: 100px;
     text-align: center;
   }
-  .modal-footer:first-child {
-    /* background-color: red; */
-  }
   .left-right {
     display: flex;
     margin: auto;
@@ -126,6 +123,10 @@
   .bottom>.description{
     overflow: hidden;
   }
+  .left>textarea,.right>textarea{
+    width: 10em;
+    height: 5em;
+  }
 
   /* body end */
 
@@ -138,7 +139,7 @@
       width: 60%;
     }
     .bodyContent{
-      height: 30vh;
+      height: 22vh;
     }
     .main{
       width: 90vw;
@@ -146,6 +147,10 @@
     .bottom>.title{
       overflow: hidden;
       word-break: normal;
+    }
+    .left>textarea,.right>textarea{
+      width: 8em;
+      height: 5em;
     }
   }
   
