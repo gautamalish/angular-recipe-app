@@ -60,6 +60,12 @@
   margin: auto;
   margin-bottom: 10px;
 }
+.titleDiv>h1{
+    /* word-wrap: break-word; */
+    word-break: break-all;
+    hyphens: auto;
+    width: 100%;
+}
 
 /* Media Query */
 @media all and (max-width:1300px){
