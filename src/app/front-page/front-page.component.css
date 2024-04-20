@@ -120,7 +120,9 @@ textarea {
   border-bottom: 2px solid black;
 }
 .bottom > .description {
+  width: 95%;
   overflow: hidden;
+  white-space: nowrap;
 }
 .left > textarea,
 .right > textarea {
@@ -160,9 +162,6 @@ textarea {
 #favourites{
   font-size: 23px;
   font-weight: bold;
-}
-.description{
-  width: 100%;
 }
 
 /* body end */
