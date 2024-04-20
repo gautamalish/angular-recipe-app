@@ -47,35 +47,35 @@
   border: none;
   cursor: pointer;
 }
-.smallSearch{
+.smallSearch {
   display: none;
 }
 /* media Queries */
-@media all and (max-width:770px){
-  .search{
+@media all and (max-width: 770px) {
+  .search {
     display: block;
   }
-  .smallSearch{
+  .smallSearch {
     display: none;
   }
-  .searchBar{
+  .searchBar {
     width: 33vw;
   }
 }
-@media all and (max-width:480px){
-  .title>h1{
+@media all and (max-width: 480px) {
+  .title > h1 {
     font-size: 20px;
   }
-  .addRecipe{
+  .addRecipe {
     font-size: 15px;
   }
-  .searchBar{
+  .searchBar {
     width: 27vw;
   }
-  .search{
+  .search {
     display: none;
   }
-  .smallSearch{
+  .smallSearch {
     display: block;
   }
   .search > .searchIcon {
@@ -84,4 +84,3 @@
     color: rgb(101, 101, 101);
   }
 }
-

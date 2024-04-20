@@ -22,11 +22,14 @@ import { FormsModule } from '@angular/forms';
 })
 export class HeaderCompComponent {
   searchText: string = '';
+  // using output to send the data to the parent component
   @Output() addRecipeClicked: EventEmitter<string> = new EventEmitter<string>();
-  @Output() searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
+  @Output() searchTextChanged: EventEmitter<string> =
+    new EventEmitter<string>();
   addRecipe() {
     this.addRecipeClicked.emit();
   }
+  // Emitting the searchText when it is changed
   onSearchTextChange() {
     this.searchTextChanged.emit(this.searchText);
   }

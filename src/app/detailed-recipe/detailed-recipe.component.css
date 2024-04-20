@@ -1,5 +1,4 @@
 .recipeList {
-  /* border: 2px solid green; */
   width: 40vw;
   margin: auto;
   display: flex;
@@ -31,28 +30,27 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  /* align-items: center; */
-}.imageDiv{
-    width: 100%;
-    display: flex;
-    justify-content: center;
 }
-.recipeImg{
-    width: 60%;
+.imageDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
-.recipeTexts > div>ul{
-    width: 100%;
+.recipeImg {
+  width: 60%;
 }
-.recipeTexts > div>ul>li{
-    width: 100%;
-    word-break: break-all;
+.recipeTexts > div > ul {
+  width: 100%;
 }
-.titleDiv{
-    width: 60%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    border: 2px solid green;
+.recipeTexts > div > ul > li {
+  width: 100%;
+  word-break: break-all;
+}
+.titleDiv {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
 }
 .backButtonDiv {
   display: flex;
@@ -61,89 +59,86 @@
   margin: auto;
   margin-bottom: 10px;
 }
-.titleDiv>h1{
-    /* word-wrap: break-word; */
-    word-break: break-all;
-    hyphens: auto;
-    width: fit-content;
+.titleDiv > h1 {
+  word-break: break-all;
+  hyphens: auto;
+  width: fit-content;
 }
 
 /* Media Query */
-@media all and (max-width:1300px){
-    .detailedPage {
-        width: 60vw;
-        margin: auto;
-        padding: 20px;
-      }
-    .recipeList{
-        width: 100%;
-    }
-    .recipeTexts{
-        width: 100%;
-    }
-    .recipeImg{
-        width: 80%;
-    }
-    .backButtonDiv{
-        width: 100%;
-    }
+@media all and (max-width: 1300px) {
+  .detailedPage {
+    width: 60vw;
+    margin: auto;
+    padding: 20px;
+  }
+  .recipeList {
+    width: 100%;
+  }
+  .recipeTexts {
+    width: 100%;
+  }
+  .recipeImg {
+    width: 80%;
+  }
+  .backButtonDiv {
+    width: 100%;
+  }
 }
-@media all and (max-width:1020px){
-    .detailedPage {
-        width: 85vw;
-        margin: auto;
-        padding: 20px;
-      }
-    .recipeList{
-        width: 100%;
-    }
-    .recipeTexts{
-        width: 100%;
-    }
-    .recipeImg{
-        width: 80%;
-    }
-    .backButtonDiv{
-        width: 100%;
-    }
+@media all and (max-width: 1020px) {
+  .detailedPage {
+    width: 85vw;
+    margin: auto;
+    padding: 20px;
+  }
+  .recipeList {
+    width: 100%;
+  }
+  .recipeTexts {
+    width: 100%;
+  }
+  .recipeImg {
+    width: 80%;
+  }
+  .backButtonDiv {
+    width: 100%;
+  }
 }
-@media all and (max-width:770px){
-    .detailedPage {
-        width: 95vw;
-        margin: auto;
-        padding: 20px;
-      }
-    .recipeList{
-        width: 100%;
-    }
-    .recipeTexts{
-        width: 100%;
-    }
-    .recipeImg{
-        width: 80%;
-    }
-    .backButtonDiv{
-        width: 100%;
-    }
+@media all and (max-width: 770px) {
+  .detailedPage {
+    width: 95vw;
+    margin: auto;
+    padding: 20px;
+  }
+  .recipeList {
+    width: 100%;
+  }
+  .recipeTexts {
+    width: 100%;
+  }
+  .recipeImg {
+    width: 80%;
+  }
+  .backButtonDiv {
+    width: 100%;
+  }
 }
-@media all and (max-width:480px){
-    .detailedPage {
-        width: 95vw;
-        margin: auto;
-        padding: 20px;
-      }
-    .recipeList{
-        width: 100%;
-    }
-    .recipeTexts{
-        width: 100%;
-    }
-    .recipeImg{
-        width: 80%;
-    }
-    .backButtonDiv{
-        width: 100%;
-    }
+@media all and (max-width: 480px) {
+  .detailedPage {
+    width: 95vw;
+    margin: auto;
+    padding: 20px;
+  }
+  .recipeList {
+    width: 100%;
+  }
+  .recipeTexts {
+    width: 100%;
+  }
+  .recipeImg {
+    width: 80%;
+  }
+  .backButtonDiv {
+    width: 100%;
+  }
 }
-
-

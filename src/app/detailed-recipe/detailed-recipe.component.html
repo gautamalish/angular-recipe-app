@@ -1,40 +1,46 @@
 <div class="detailedPage">
-    <div class="backButtonDiv" style="margin-bottom: 10px;">
-        <a routerLink="/">
-        <button class="btn btn-primary">Back to Main</button>
-        </a>
+  <div class="backButtonDiv" style="margin-bottom: 10px">
+    <a routerLink="/">
+      <button class="btn btn-primary">Back to Main</button>
+    </a>
+  </div>
+  <div class="recipeList">
+    <div class="imageDiv">
+      <img
+        [src]="recipe.imageUrl"
+        class="recipeImg"
+        style="border-radius: 7px"
+        alt="Recipe Image"
+      />
     </div>
-    <div class="recipeList">
-        <div class="imageDiv">
-            <img [src]="recipe.imageUrl" class="recipeImg" style="border-radius: 7px;" alt="Recipe Image">
-        </div>
-        <div class="titleDiv">
-            <h1>{{recipe.title}}</h1>
-        </div>
-        <div class="recipeTexts">
-        <div class="descriptionDiv">
-            <p style="font-weight: bold;">Description</p>
-            <p style="padding-left: 17px;word-wrap: break-word;">{{recipe.description}}</p>
-        </div>
-        <div class="ingredientsDiv">
-            <p style="font-weight: bold;">Ingredients</p>
-            <ul *ngFor="let ingredients of recipe.ingredients.split('\n');">
-                <li>{{ ingredients }}</li>
-            </ul>
-        </div>
-        <div class="instructionsDiv">
-            <p style="font-weight: bold;">Instructions</p>
-            <ul *ngFor="let instructions of recipe.instructions.split('\n');">
-                <li>{{ instructions }}</li>
-            </ul>
-        </div>
-        <div class="nutritionDiv">
-            <p style="font-weight: bold;">Nutrition</p>
-            <ul *ngFor="let nutrition of recipe.nutrition.split('\n');">
-                <li>{{ nutrition }}</li>
-            </ul>
-        </div>
+    <div class="titleDiv">
+      <h1>{{ recipe.title }}</h1>
     </div>
+    <div class="recipeTexts">
+      <div class="descriptionDiv">
+        <p style="font-weight: bold">Description</p>
+        <p style="padding-left: 17px; word-wrap: break-word">
+          {{ recipe.description }}
+        </p>
+      </div>
+      <div class="ingredientsDiv">
+        <p style="font-weight: bold">Ingredients</p>
+        <ul *ngFor="let ingredients of recipe.ingredients.split('\n')">
+          <li>{{ ingredients }}</li>
+        </ul>
+      </div>
+      <div class="instructionsDiv">
+        <p style="font-weight: bold">Instructions</p>
+        <ul *ngFor="let instructions of recipe.instructions.split('\n')">
+          <li>{{ instructions }}</li>
+        </ul>
+      </div>
+      <div class="nutritionDiv">
+        <p style="font-weight: bold">Nutrition</p>
+        <ul *ngFor="let nutrition of recipe.nutrition.split('\n')">
+          <li>{{ nutrition }}</li>
+        </ul>
+      </div>
     </div>
+  </div>
 </div>
-

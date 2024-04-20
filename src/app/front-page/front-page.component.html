@@ -1,162 +1,167 @@
 <div class="main">
-    <div class="header">
-      <app-header-comp
-        (addRecipeClicked)="changeModalDisplay()"
-        (searchTextChanged)="onSearchTextEntered($event)"
-      ></app-header-comp>
-    </div>
-  
-    <div class="body">
-      <div
-        class="modal"
-        id="exampleModal"
-        #exampleModal
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Add New Recipe</h5>
-              <button
-                type="button"
-                class="btn-close btn-danger"
-                data-bs-dismiss="modal"
-                #close
-                aria-label="Close"
-                (click)="onCloseClick()"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <div class="inputs">
-                <div class="imageUrlDiv">
-                  <input
-                    type="text"
-                    placeholder="Image Url"
-                    [(ngModel)]="detailsObj.imageUrl"
-                  />
+  <div class="header">
+    <app-header-comp
+      (addRecipeClicked)="changeModalDisplay()"
+      (searchTextChanged)="onSearchTextEntered($event)"
+    ></app-header-comp>
+  </div>
+
+  <div class="body">
+    <div
+      class="modal"
+      id="exampleModal"
+      #exampleModal
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add New Recipe</h5>
+            <button
+              type="button"
+              class="btn-close btn-danger"
+              data-bs-dismiss="modal"
+              #close
+              aria-label="Close"
+              (click)="onCloseClick()"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="inputs">
+              <div class="imageUrlDiv">
+                <input
+                  type="text"
+                  placeholder="Image Url"
+                  [(ngModel)]="detailsObj.imageUrl"
+                />
+              </div>
+              <div
+                class="titleDiv"
+                style="margin: auto; width: fit-content; margin-bottom: 10px"
+              >
+                <input
+                  type="text"
+                  placeholder="Title"
+                  name="title"
+                  [(ngModel)]="detailsObj.title"
+                  style="
+                    width: 220px;
+                    padding: 10px;
+                    outline: none;
+                    border-radius: 7px;
+                    border: 1px solid gray;
+                  "
+                />
+              </div>
+              <div class="left-right">
+                <div class="left">
+                  <textarea
+                    name="description"
+                    id="description"
+                    cols="22"
+                    rows="5"
+                    placeholder="Description"
+                    [(ngModel)]="detailsObj.description"
+                  ></textarea>
+                  <textarea
+                    name="ingredients"
+                    id="ingredients"
+                    cols="22"
+                    rows="5"
+                    placeholder="Ingredients"
+                    [(ngModel)]="detailsObj.ingredients"
+                  ></textarea>
                 </div>
-                <div
-                  class="titleDiv"
-                  style="margin: auto; width: fit-content; margin-bottom: 10px"
-                >
-                  <input
-                    type="text"
-                    placeholder="Title"
-                    name="title"
-                    [(ngModel)]="detailsObj.title"
-                    style="
-                      width: 220px;
-                      padding: 10px;
-                      outline: none;
-                      border-radius: 7px;
-                      border: 1px solid gray;
-                    "
-                  />
-                </div>
-                <div class="left-right">
-                  <div class="left">
-                    <textarea
-                      name="description"
-                      id="description"
-                      cols="22"
-                      rows="5"
-                      placeholder="Description"
-                      [(ngModel)]="detailsObj.description"
-                    ></textarea>
-                    <textarea
-                      name="ingredients"
-                      id="ingredients"
-                      cols="22"
-                      rows="5"
-                      placeholder="Ingredients"
-                      [(ngModel)]="detailsObj.ingredients"
-                    ></textarea>
-                  </div>
-                  <div class="right">
-                    <textarea
-                      name="instructions"
-                      id="instructions"
-                      cols="22"
-                      rows="5"
-                      placeholder="Instructions"
-                      [(ngModel)]="detailsObj.instructions"
-                    ></textarea>
-                    <textarea
-                      name="nutrition"
-                      id="nutrition"
-                      cols="22"
-                      rows="5"
-                      placeholder="Nutritional Facts"
-                      [(ngModel)]="detailsObj.nutrition"
-                    ></textarea>
-                  </div>
+                <div class="right">
+                  <textarea
+                    name="instructions"
+                    id="instructions"
+                    cols="22"
+                    rows="5"
+                    placeholder="Instructions"
+                    [(ngModel)]="detailsObj.instructions"
+                  ></textarea>
+                  <textarea
+                    name="nutrition"
+                    id="nutrition"
+                    cols="22"
+                    rows="5"
+                    placeholder="Nutritional Facts"
+                    [(ngModel)]="detailsObj.nutrition"
+                  ></textarea>
                 </div>
               </div>
-              <div style="margin: auto;width: fit-content;padding-top: 5px;">
-              <p class="text-danger">{{error}}</p>
             </div>
+            <div style="margin: auto; width: fit-content; padding-top: 5px">
+              <p class="text-danger">{{ error }}</p>
             </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-danger"
-                data-bs-dismiss="modal"
-                #close
-                (click)="onCloseClick()"
-              >
-                Close
-              </button>
-              @if(detailsObj.id==0){
-              <button type="button" class="btn btn-success" (click)="addRecipe()">
-                Add
-              </button>
-              } @else{
-              <button
-                type="button"
-                class="btn btn-primary"
-                (click)="updateRecipe()"
-              >
-                Update
-              </button>
-              }
-            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+              #close
+              (click)="onCloseClick()"
+            >
+              Close
+            </button>
+            @if(detailsObj.id==0){
+            <button type="button" class="btn btn-success" (click)="addRecipe()">
+              Add
+            </button>
+            } @else{
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="updateRecipe()"
+            >
+              Update
+            </button>
+            }
           </div>
         </div>
       </div>
-      <div *ngIf="noRecipesFound && searchText !== ''" class="noRecipe">
-        <p>No Recipe Found.</p>
-      </div>
-      <div class="noRecipe" *ngIf="recipeList.length===0 && searchText==''">
-        <p>No Recipe Found. Create New Recipe.</p>
-      </div>
-      <div class="item-body" *ngFor="let item of recipeList; let i = index">
-        <div
-          class="bodyContent"
-          *ngIf="
-            searchText === '' ||
-            item.title.toLowerCase().includes(searchText.toLowerCase())
-          "
-        >
+    </div>
+    <div *ngIf="noRecipesFound && searchText !== ''" class="noRecipe">
+      <p>No Recipe Found.</p>
+    </div>
+    <div class="noRecipe" *ngIf="recipeList.length === 0 && searchText == ''">
+      <p>No Recipe Found. Create New Recipe.</p>
+    </div>
+    <div class="item-body" *ngFor="let item of recipeList; let i = index">
+      <div
+        class="bodyContent"
+        *ngIf="
+          searchText === '' ||
+          item.title.toLowerCase().includes(searchText.toLowerCase())
+        "
+      >
         <div class="top">
           <img [src]="item.imageUrl" alt="Recipe Image" class="titleImg" />
         </div>
         <div class="bottom">
-            <h1 class="title" style="font-size: 22px; font-weight: bold;cursor: pointer;" routerLink="/detailed-recipe"  [state]="item">
-                {{ item.title }}
-            </h1>
-            <p class="description">{{ item.description }}</p>
-            <div class="buttons">
-              <button class="edit btn btn-primary" (click)="onEdit(item)">
-                Edit
-              </button>
-              <button class="delete btn btn-danger" (click)="onDelete(item)">
-                Delete
-              </button>
-            </div>
+          <h1
+            class="title"
+            style="font-size: 22px; font-weight: bold; cursor: pointer"
+            routerLink="/detailed-recipe"
+            [state]="item"
+          >
+            {{ item.title }}
+          </h1>
+          <p class="description">{{ item.description }}</p>
+          <div class="buttons">
+            <button class="edit btn btn-primary" (click)="onEdit(item)">
+              Edit
+            </button>
+            <button class="delete btn btn-danger" (click)="onDelete(item)">
+              Delete
+            </button>
           </div>
         </div>
       </div>
+    </div>
   </div>
-  
+</div>
