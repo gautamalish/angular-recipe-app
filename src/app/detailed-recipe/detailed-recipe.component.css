@@ -62,7 +62,12 @@
 }
 
 /* Media Query */
-@media all and (max-width:480px){
+@media all and (max-width:1300px){
+    .detailedPage {
+        width: 60vw;
+        margin: auto;
+        padding: 20px;
+      }
     .recipeList{
         width: 100%;
     }
@@ -76,3 +81,62 @@
         width: 100%;
     }
 }
+@media all and (max-width:1020px){
+    .detailedPage {
+        width: 85vw;
+        margin: auto;
+        padding: 20px;
+      }
+    .recipeList{
+        width: 100%;
+    }
+    .recipeTexts{
+        width: 100%;
+    }
+    .recipeImg{
+        width: 80%;
+    }
+    .backButtonDiv{
+        width: 100%;
+    }
+}
+@media all and (max-width:770px){
+    .detailedPage {
+        width: 95vw;
+        margin: auto;
+        padding: 20px;
+      }
+    .recipeList{
+        width: 100%;
+    }
+    .recipeTexts{
+        width: 100%;
+    }
+    .recipeImg{
+        width: 80%;
+    }
+    .backButtonDiv{
+        width: 100%;
+    }
+}
+@media all and (max-width:480px){
+    .detailedPage {
+        width: 95vw;
+        margin: auto;
+        padding: 20px;
+      }
+    .recipeList{
+        width: 100%;
+    }
+    .recipeTexts{
+        width: 100%;
+    }
+    .recipeImg{
+        width: 80%;
+    }
+    .backButtonDiv{
+        width: 100%;
+    }
+}
+
+

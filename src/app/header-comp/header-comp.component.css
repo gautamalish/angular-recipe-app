@@ -22,7 +22,7 @@
 }
 .searchBar {
   padding: 10px;
-  width: 20vw;
+  width: 22vw;
   border-radius: 7px;
   outline: none;
   border: 1px solid gray;
@@ -51,6 +51,17 @@
   display: none;
 }
 /* media Queries */
+@media all and (max-width:770px){
+  .search{
+    display: block;
+  }
+  .smallSearch{
+    display: none;
+  }
+  .searchBar{
+    width: 33vw;
+  }
+}
 @media all and (max-width:480px){
   .title>h1{
     font-size: 20px;
@@ -59,7 +70,7 @@
     font-size: 15px;
   }
   .searchBar{
-    width: 25vw;
+    width: 27vw;
   }
   .search{
     display: none;
@@ -73,3 +84,4 @@
     color: rgb(101, 101, 101);
   }
 }
+
