@@ -52,6 +52,7 @@
     margin: auto;
     display: flex;
     justify-content: center;
+    border: 2px solid green;
 }
 .backButtonDiv {
   display: flex;
@@ -64,7 +65,7 @@
     /* word-wrap: break-word; */
     word-break: break-all;
     hyphens: auto;
-    width: 100%;
+    width: fit-content;
 }
 
 /* Media Query */
