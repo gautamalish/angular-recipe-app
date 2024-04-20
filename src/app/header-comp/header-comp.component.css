@@ -15,6 +15,7 @@
   font-size: 25px;
   font-weight: 500;
   margin: 0;
+  /* border: 2px solid red; */
 }
 .search {
   position: relative;
@@ -28,11 +29,13 @@
 }
 .searchBar::placeholder {
   font-size: 15px;
+  color: rgb(101, 101, 101);
 }
 .search > .searchIcon {
   position: absolute;
-  top: 8px;
+  top: 12px;
   right: 4px;
+  color: rgb(101, 101, 101);
 }
 .addRecipe {
   background-color: green;
@@ -43,4 +46,30 @@
   outline: none;
   border: none;
   cursor: pointer;
+}
+.smallSearch{
+  display: none;
+}
+/* media Queries */
+@media all and (max-width:480px){
+  .title>h1{
+    font-size: 20px;
+  }
+  .addRecipe{
+    font-size: 15px;
+  }
+  .searchBar{
+    width: 25vw;
+  }
+  .search{
+    display: none;
+  }
+  .smallSearch{
+    display: block;
+  }
+  .search > .searchIcon {
+    top: 12px;
+    right: 4px;
+    color: rgb(101, 101, 101);
+  }
 }

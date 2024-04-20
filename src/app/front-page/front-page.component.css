@@ -4,7 +4,6 @@
     margin-top: 15px;
     padding: 10px;
     padding-bottom: 5vh;
-    /* border: 2px solid red; */
   }
   .modal-footer {
     display: flex;
@@ -57,24 +56,28 @@
     border-radius: 5px;
   }
   .top {
-    flex: 2;
+    /* flex: 2; */
+    width: 20%;
+    display: flex;
+    justify-content: center;
     margin: 0;
     padding: 0;
     height: 100%;
+    align-items: center;
   }
   .bodyContent {
     display: flex;
-    /* align-items: center; */
     padding: 10px;
     text-align: justify;
     -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
     box-shadow: 2px 4px 10px 1px rgba(154, 153, 153, 0.47);
     margin-top: 30px;
-    height: 220px;
+    height: 30vh;
   }
   .bottom {
-    padding-left: 10px;
-    flex: 5;
+    padding: 0px 10px;
+    /* flex: 5; */
+    width: 80%;
   }
   .body {
     margin-top: 40px;
@@ -106,13 +109,9 @@
   .bodyContent:not(:hover){
     transition: all 0.3s;
   }
-  .bottom{
-    word-wrap: break-word;
-    /* border: 2px solid black; */
-  }
   .bottom>.title{
-    width: 54vw;
-    word-wrap: break-word;
+    width: 100%;
+    overflow: hidden;
   }
   .bottom>.title:hover{
     color: rgba(0, 0, 255, 0.709);
@@ -124,6 +123,29 @@
     text-decoration: none;
     border-bottom: 2px solid black;
   }
+  .bottom>.description{
+    overflow: hidden;
+  }
 
   /* body end */
+
+  /* media Queries */
+  @media all and (max-width:480px){
+    .top{
+      width: 40%;
+    }
+    .bottom{
+      width: 60%;
+    }
+    .bodyContent{
+      height: 30vh;
+    }
+    .main{
+      width: 90vw;
+    }
+    .bottom>.title{
+      overflow: hidden;
+      word-break: normal;
+    }
+  }
   

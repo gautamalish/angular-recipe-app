@@ -12,9 +12,17 @@
     />
     <mat-icon class="searchIcon">search</mat-icon>
   </div>
+  <div class="search smallSearch">
+    <input
+      type="text"
+      placeholder="Search"
+      class="searchBar smallSearchBar"
+      [(ngModel)]="searchText"
+      (input)="onSearchTextChange()"
+    />
+    <mat-icon class="searchIcon">search</mat-icon>
+  </div>
   <div>
     <button class="addRecipe" (click)="addRecipe()">Add Recipe</button>
   </div>
 </div>
-
-<!-- (click)="addRecipe()" -->

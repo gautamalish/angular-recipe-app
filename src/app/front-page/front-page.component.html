@@ -147,7 +147,7 @@
             <h1 class="title" style="font-size: 22px; font-weight: bold;cursor: pointer;" routerLink="/detailed-recipe"  [state]="item">
                 {{ item.title }}
             </h1>
-            <p>{{ item.description }}</p>
+            <p class="description">{{ item.description }}</p>
             <div class="buttons">
               <button class="edit btn btn-primary" (click)="onEdit(item)">
                 Edit

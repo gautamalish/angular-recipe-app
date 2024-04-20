@@ -1,21 +1,20 @@
 <div class="detailedPage">
-    <div class="backButton" style="width: 40vw; margin: auto; margin-bottom: 10px;">
+    <div class="backButtonDiv" style="margin-bottom: 10px;">
         <a routerLink="/">
         <button class="btn btn-primary">Back to Main</button>
         </a>
-        </div>
+    </div>
     <div class="recipeList">
-        
-        <div class="div">
-            <img [src]="recipe.imageUrl" class="recipeImg" style="border-radius: 7px; width: 400px;" alt="Recipe Image">
+        <div class="imageDiv">
+            <img [src]="recipe.imageUrl" class="recipeImg" style="border-radius: 7px;" alt="Recipe Image">
         </div>
         <div class="titleDiv">
-            <h1>{{recipe.title}}</h1>
+            <h1 style="word-wrap: break-word; width: 100%;">{{recipe.title}}</h1>
         </div>
         <div class="recipeTexts">
         <div class="descriptionDiv">
             <p style="font-weight: bold;">Description</p>
-            <p style="padding-left: 17px;">{{recipe.description}}</p>
+            <p style="padding-left: 17px;word-wrap: break-word;">{{recipe.description}}</p>
         </div>
         <div class="ingredientsDiv">
             <p style="font-weight: bold;">Ingredients</p>
