@@ -130,6 +130,24 @@ textarea {
 .noRecipe {
   width: fit-content;
 }
+.addToFav{
+  outline: none;
+  /* border: 2px solid blue; */
+  border: 2px dotted rgba(0, 0, 255, 0.507);
+  padding: 5px 10px;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  background-color: rgba(0, 0, 255, 0.208)
+}
+.addToFav:hover{
+  background-color: rgba(0, 0, 255, 0.505);
+  color: white;
+  transition: all 0.3s;
+}
+.addToFav:focus{
+  background-color: blue;
+  color: white;
+}
 
 /* body end */
 

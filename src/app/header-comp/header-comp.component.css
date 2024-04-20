@@ -50,6 +50,11 @@
 .smallSearch {
   display: none;
 }
+.favouritesDiv{
+  display: flex;
+  /* border: 2px solid green; */
+  cursor: pointer;
+}
 /* media Queries */
 @media all and (max-width: 770px) {
   .search {

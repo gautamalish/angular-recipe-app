@@ -11,12 +11,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppComponent } from '../app.component';
 import { FormsModule } from '@angular/forms';
+import { Route, RouterLink, Router } from '@angular/router';
 // import { AddRecipeComponent } from '../add-recipe/add-recipe.component';
 
 @Component({
   selector: 'app-header-comp',
   standalone: true,
-  imports: [MatIconModule, CommonModule, FormsModule],
+  imports: [MatIconModule, CommonModule, FormsModule,RouterLink],
   templateUrl: './header-comp.component.html',
   styleUrl: './header-comp.component.css',
 })
