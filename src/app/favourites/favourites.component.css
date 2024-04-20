@@ -1,0 +1,205 @@
+.imageUrlDiv {
+    display: flex;
+    justify-content: center;
+  }
+  .imageUrlDiv > input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid gray;
+    width: 220px;
+    outline: none;
+  }
+  textarea {
+    resize: none;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 7px;
+    outline: none;
+  }
+  /* body */
+  .titleImg {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+  }
+  .top {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    align-items: center;
+  }
+  .bodyContent {
+    display: flex;
+    padding: 10px;
+    text-align: justify;
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+    box-shadow: 2px 4px 10px 1px rgba(154, 153, 153, 0.47);
+    margin-top: 30px;
+    height: 20vh;
+    border-radius: 7px;
+  }
+  .bottom {
+    padding: 0px 10px;
+    width: 80%;
+  }
+  .body {
+    margin-top: 40px;
+  }
+  .buttons {
+    display: flex;
+    gap: 10px;
+  }
+  .buttons > button {
+    width: 80px;
+    color: white;
+    border-radius: 8px;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+  }
+  
+  .noRecipe {
+    margin: auto;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+  }
+  .bodyContent:hover {
+    transform: translateY(-7px);
+    transition: all 0.3s;
+  }
+  .bodyContent:not(:hover) {
+    transition: all 0.3s;
+  }
+  .bottom > .title {
+    width: 95%;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .bottom > .title:hover {
+    color: rgba(0, 0, 255, 0.709);
+    transition: all 0.3s;
+  }
+  .bottom > .title > .detailsPageAnchor {
+    color: blue;
+    transition: all 0.3s;
+    text-decoration: none;
+    border-bottom: 2px solid black;
+  }
+  .bottom > .description {
+    overflow: hidden;
+  }
+  .left > textarea,
+  .right > textarea {
+    width: 10em;
+    height: 5em;
+  }
+  .noRecipe {
+    width: fit-content;
+  }
+  .addedToFav{
+    outline: none;
+    width: 161px;
+    border: 2px dotted rgba(0, 0, 255, 0.507);
+    padding: 5px 10px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 255, 0.755);
+    color: white;
+  }
+  .notAddedToFav{
+    border-radius: 7px;
+    width: 161px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 2px dotted rgba(0, 0, 255, 0.507);
+    background-color: rgba(0, 0, 255, 0.208);
+  }
+  .favouritesDiv{
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+  #favourites{
+    font-size: 23px;
+    font-weight: bold;
+  }
+  .favourites{
+    width: 80vw;
+    margin: auto;
+  }
+  .backButtonDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: -10px;
+  }
+  @media all and (max-width: 1200px) {
+}
+@media all and (max-width: 1030px) {
+  .top {
+    width: 30%;
+  }
+  .bottom {
+    width: 70%;
+  }
+  /* .bodyContent {
+    height: 22vh;
+  } */
+}
+@media all and (max-width: 770px) {
+  .top {
+    width: 30%;
+  }
+  .bottom {
+    width: 70%;
+  }
+  /* .bodyContent {
+    height: 22vh;
+  } */
+  .main {
+    width: 95vw;
+  }
+  .bottom > .title {
+    overflow: hidden;
+    word-break: normal;
+  }
+  .left > textarea,
+  .right > textarea {
+    width: 8em;
+    height: 5em;
+  }
+}
+@media all and (max-width: 480px) {
+  .top {
+    width: 40%;
+  }
+  .bottom {
+    width: 60%;
+  }
+  /* .bodyContent {
+    height: 22vh;
+  } */
+  .main {
+    width: 95vw;
+  }
+  .bottom > .title {
+    overflow: hidden;
+    word-break: normal;
+  }
+  .left > textarea,
+  .right > textarea {
+    width: 8em;
+    height: 5em;
+  }
+}

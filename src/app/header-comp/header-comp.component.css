@@ -12,8 +12,8 @@
   height: fit-content;
 }
 .title > h1 {
-  font-size: 25px;
-  font-weight: 500;
+  font-size: 30px;
+  font-weight: bold;
   margin: 0;
   /* border: 2px solid red; */
 }
@@ -52,6 +52,8 @@
 }
 .favouritesDiv{
   display: flex;
+  align-items: center;
+  justify-content: center;
   /* border: 2px solid green; */
   cursor: pointer;
 }
@@ -69,7 +71,11 @@
 }
 @media all and (max-width: 480px) {
   .title > h1 {
+    font-size: 18px;
+  }
+  #favourites{
     font-size: 20px;
+    font-weight: bold;
   }
   .addRecipe {
     font-size: 15px;
@@ -88,4 +94,7 @@
     right: 4px;
     color: rgb(101, 101, 101);
   }
+}
+@media all and (max-width: 340px) {
+  
 }

@@ -54,7 +54,7 @@
 }
 .backButtonDiv {
   display: flex;
-  justify-content: end;
+  justify-content: center;
   width: 40vw;
   margin: auto;
   margin-bottom: 10px;

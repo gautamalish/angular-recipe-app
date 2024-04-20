@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
 import { FrontPageComponent } from '../front-page/front-page.component';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 @Component({
   selector: 'app-detailed-recipe',
   standalone: true,

@@ -1,1 +1,40 @@
-<p>favourites works!</p>
+<div class="favourites">
+    
+    <div class="backButtonDiv" style="margin-bottom: 10px">
+        <a routerLink="/">
+          <button class="btn btn-secondary">Back to Main</button>
+        </a>
+      </div>
+      <div style="display: flex;justify-content: center;">
+        <h1>Favourites</h1>
+      </div>
+      
+      <div class="noRecipe" *ngIf="favouritesRecipeList.length === 0">
+        <p>No Favourites Found</p>
+        </div>
+    <div class="item-body" *ngFor="let item of favouritesRecipeList">
+        <div
+          class="bodyContent"
+        >
+          <div class="top">
+            <img [src]="item.imageUrl" alt="Recipe Image" class="titleImg" />
+          </div>
+          <div class="bottom">
+            <h1
+              class="title"
+              style="font-size: 22px; font-weight: bold; cursor: pointer"
+              routerLink="/detailed-recipe"
+              [state]="item"
+            >
+              {{ item.title }}
+            </h1>
+            <p class="description">{{ item.description }}</p>
+            <div class="buttons">
+              <button class="delete btn btn-danger" (click)="onDelete(item)">
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

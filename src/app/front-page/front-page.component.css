@@ -68,7 +68,7 @@ textarea {
   -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
   box-shadow: 2px 4px 10px 1px rgba(154, 153, 153, 0.47);
   margin-top: 30px;
-  height: 23vh;
+  height: 25vh;
 }
 .bottom {
   padding: 0px 10px;
@@ -130,23 +130,39 @@ textarea {
 .noRecipe {
   width: fit-content;
 }
-.addToFav{
+.addedToFav{
   outline: none;
+  width: 161px;
   /* border: 2px solid blue; */
   border: 2px dotted rgba(0, 0, 255, 0.507);
   padding: 5px 10px;
   border-radius: 7px;
   margin-bottom: 10px;
-  background-color: rgba(0, 0, 255, 0.208)
-}
-.addToFav:hover{
-  background-color: rgba(0, 0, 255, 0.505);
+  background-color: rgba(0, 0, 255, 0.755);
   color: white;
-  transition: all 0.3s;
 }
-.addToFav:focus{
-  background-color: blue;
-  color: white;
+.notAddedToFav{
+  border-radius: 7px;
+  width: 161px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border: 2px dotted rgba(0, 0, 255, 0.507);
+  background-color: rgba(0, 0, 255, 0.208);
+}
+.favouritesDiv{
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  cursor: pointer;
+}
+#favourites{
+  font-size: 23px;
+  font-weight: bold;
+}
+.description{
+  width: 100%;
 }
 
 /* body end */
@@ -161,9 +177,9 @@ textarea {
   .bottom {
     width: 70%;
   }
-  .bodyContent {
+  /* .bodyContent {
     height: 22vh;
-  }
+  } */
 }
 @media all and (max-width: 770px) {
   .top {
@@ -172,9 +188,9 @@ textarea {
   .bottom {
     width: 70%;
   }
-  .bodyContent {
+  /* .bodyContent {
     height: 22vh;
-  }
+  } */
   .main {
     width: 95vw;
   }
@@ -195,9 +211,9 @@ textarea {
   .bottom {
     width: 60%;
   }
-  .bodyContent {
+  /* .bodyContent {
     height: 22vh;
-  }
+  } */
   .main {
     width: 95vw;
   }
@@ -209,5 +225,13 @@ textarea {
   .right > textarea {
     width: 8em;
     height: 5em;
+  }
+}
+@media all and (max-width: 340px) {
+  .bodyContent{
+    height: 27vh;
+  }
+  .addToFav{
+    padding: 5px;
   }
 }

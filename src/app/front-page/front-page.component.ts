@@ -5,7 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 // import {AngularFireModule} from '@angular/fire';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Route, RouterLink, Router } from '@angular/router';
+import { Route, RouterLink, Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-front-page',
   standalone: true,
@@ -22,14 +22,13 @@ import { Route, RouterLink, Router } from '@angular/router';
 export class FrontPageComponent implements OnInit {
   searchText: string = '';
   error: string = '';
-  constructor(private route: Router) {}
-
+  constructor(private router: Router) {}
   noRecipesFound: boolean = false;
   // creating detailsObj of class RecipeDetails
   detailsObj: RecipeDetails = new RecipeDetails();
   // creating a recipelist array
   recipeList: RecipeDetails[] = [];
-  filteredRecipeList: RecipeDetails[] = [];
+  favouritesRecipeList:RecipeDetails[]=[]
   ngOnInit(): void {
     // getting the localRecipe item from localstorage
     const localData = localStorage.getItem('localRecipe');
@@ -37,6 +36,16 @@ export class FrontPageComponent implements OnInit {
     if (localData != null) {
       this.recipeList = JSON.parse(localData);
     }
+    const favouritesData = localStorage.getItem('favouritesRecipe');
+  if (favouritesData != null) {
+    this.favouritesRecipeList = JSON.parse(favouritesData);
+    console.log(this.favouritesRecipeList)
+  }
+
+  this.recipeList.forEach((recipe) => {
+    const index = this.favouritesRecipeList.findIndex((favItem) => favItem.id === recipe.id);
+    recipe.isFavourite = index !== -1; // Set isFavourite based on whether the recipe is in favourites list
+  });
   }
   @ViewChild('close') closeModal: ElementRef | undefined;
   @ViewChild('exampleModal') exampleModal: ElementRef | undefined;
@@ -47,6 +56,10 @@ export class FrontPageComponent implements OnInit {
       this.exampleModal.nativeElement.style.display = 'block';
     }
   }
+  // navigateToFavourites() {
+  //   // Navigate to the "/favourites" route and pass the filteredRecipeList as state
+  //   this.router.navigate(['/favourites'], { state: { favourites: this.favouritesRecipeList } });
+  // }
   // Function to call when search text is entered
   onSearchTextEntered(value: string) {
     this.searchText = value;
@@ -70,6 +83,20 @@ export class FrontPageComponent implements OnInit {
   onEdit(item: RecipeDetails) {
     this.detailsObj = item;
     this.changeModalDisplay();
+  }
+  addToFav(item:RecipeDetails){
+    const index = this.favouritesRecipeList.findIndex((favItem) => favItem.id === item.id);
+    if(index !== -1){
+      // If the item is already in favorites, remove it
+      this.favouritesRecipeList.splice(index, 1);
+      item.isFavourite = false;
+    } else {
+      // If the item is not in favorites, add it
+      this.favouritesRecipeList.push(item);
+      item.isFavourite = true;
+    }
+    // Save the updated favourites list to local storage
+    localStorage.setItem('favouritesRecipe', JSON.stringify(this.favouritesRecipeList));
   }
   // called when Add recipe is clicked
   addRecipe() {
@@ -148,8 +175,16 @@ export class FrontPageComponent implements OnInit {
       currentRecord.instructions = this.detailsObj.instructions;
       currentRecord.nutrition = this.detailsObj.nutrition;
     }
+    const favIndex = this.favouritesRecipeList.findIndex(
+      (favItem) => favItem.id === this.detailsObj.id
+  );
+
+  if (favIndex !== -1) {
+      this.favouritesRecipeList[favIndex] = { ...this.detailsObj };
+  }
     // setting the localStorage to this.recipeList
     localStorage.setItem('localRecipe', JSON.stringify(this.recipeList));
+    localStorage.setItem('favouritesRecipe', JSON.stringify(this.favouritesRecipeList));
     // closing the modal
     this.onCloseClick();
   }
@@ -164,6 +199,7 @@ export class RecipeDetails {
   ingredients: string;
   instructions: string;
   nutrition: string;
+  isFavourite:boolean;
 
   constructor() {
     this.imageUrl = '';
@@ -173,5 +209,6 @@ export class RecipeDetails {
     this.instructions = '';
     this.nutrition = '';
     this.id = 0;
+    this.isFavourite=false;
   }
 }
