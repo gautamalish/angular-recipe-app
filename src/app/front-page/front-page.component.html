@@ -4,12 +4,15 @@
       (addRecipeClicked)="changeModalDisplay()"
       (searchTextChanged)="onSearchTextEntered($event)"
     ></app-header-comp>
-    <!-- (click)="navigateToFavourites()" -->
-    <div class="favouritesDiv" routerLink="/favourites" [state]="this.favouritesRecipeList">
-      <h1  id="favourites">Favourites</h1>
+    <div
+      class="favouritesDiv"
+      routerLink="/favourites"
+      [state]="this.favouritesRecipeList"
+    >
+      <h1 id="favourites">Favourites</h1>
       <label for="favourites">
-      <img src="../../assets/images/favourites.png" alt="Favourites icon">
-    </label>
+        <img src="../../assets/images/favourites.png" alt="Favourites icon" />
+      </label>
     </div>
   </div>
 
@@ -159,7 +162,15 @@
             {{ item.title }}
           </h1>
           <p class="description">{{ item.description }}</p>
-          <button [ngClass]="{'addedToFav': item.isFavourite,'notAddedToFav': !item.isFavourite}" (click)="addToFav(item)">{{!item.isFavourite?"Add to Favourite":"Added To Favourite"}}</button>
+          <button
+            [ngClass]="{
+              addedToFav: item.isFavourite,
+              notAddedToFav: !item.isFavourite
+            }"
+            (click)="addToFav(item)"
+          >
+            {{ !item.isFavourite ? "Add to Favourite" : "Added To Favourite" }}
+          </button>
           <div class="buttons">
             <button class="edit btn btn-primary" (click)="onEdit(item)">
               Edit

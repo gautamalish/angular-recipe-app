@@ -28,7 +28,7 @@ export class FrontPageComponent implements OnInit {
   detailsObj: RecipeDetails = new RecipeDetails();
   // creating a recipelist array
   recipeList: RecipeDetails[] = [];
-  favouritesRecipeList:RecipeDetails[]=[]
+  favouritesRecipeList: RecipeDetails[] = [];
   ngOnInit(): void {
     // getting the localRecipe item from localstorage
     const localData = localStorage.getItem('localRecipe');
@@ -37,15 +37,17 @@ export class FrontPageComponent implements OnInit {
       this.recipeList = JSON.parse(localData);
     }
     const favouritesData = localStorage.getItem('favouritesRecipe');
-  if (favouritesData != null) {
-    this.favouritesRecipeList = JSON.parse(favouritesData);
-    console.log(this.favouritesRecipeList)
-  }
+    if (favouritesData != null) {
+      this.favouritesRecipeList = JSON.parse(favouritesData);
+      console.log(this.favouritesRecipeList);
+    }
 
-  this.recipeList.forEach((recipe) => {
-    const index = this.favouritesRecipeList.findIndex((favItem) => favItem.id === recipe.id);
-    recipe.isFavourite = index !== -1; // Set isFavourite based on whether the recipe is in favourites list
-  });
+    this.recipeList.forEach((recipe) => {
+      const index = this.favouritesRecipeList.findIndex(
+        (favItem) => favItem.id === recipe.id
+      );
+      recipe.isFavourite = index !== -1; // Set isFavourite based on whether the recipe is in favourites list
+    });
   }
   @ViewChild('close') closeModal: ElementRef | undefined;
   @ViewChild('exampleModal') exampleModal: ElementRef | undefined;
@@ -84,9 +86,11 @@ export class FrontPageComponent implements OnInit {
     this.detailsObj = item;
     this.changeModalDisplay();
   }
-  addToFav(item:RecipeDetails){
-    const index = this.favouritesRecipeList.findIndex((favItem) => favItem.id === item.id);
-    if(index !== -1){
+  addToFav(item: RecipeDetails) {
+    const index = this.favouritesRecipeList.findIndex(
+      (favItem) => favItem.id === item.id
+    );
+    if (index !== -1) {
       // If the item is already in favorites, remove it
       this.favouritesRecipeList.splice(index, 1);
       item.isFavourite = false;
@@ -96,7 +100,10 @@ export class FrontPageComponent implements OnInit {
       item.isFavourite = true;
     }
     // Save the updated favourites list to local storage
-    localStorage.setItem('favouritesRecipe', JSON.stringify(this.favouritesRecipeList));
+    localStorage.setItem(
+      'favouritesRecipe',
+      JSON.stringify(this.favouritesRecipeList)
+    );
   }
   // called when Add recipe is clicked
   addRecipe() {
@@ -177,14 +184,17 @@ export class FrontPageComponent implements OnInit {
     }
     const favIndex = this.favouritesRecipeList.findIndex(
       (favItem) => favItem.id === this.detailsObj.id
-  );
+    );
 
-  if (favIndex !== -1) {
+    if (favIndex !== -1) {
       this.favouritesRecipeList[favIndex] = { ...this.detailsObj };
-  }
+    }
     // setting the localStorage to this.recipeList
     localStorage.setItem('localRecipe', JSON.stringify(this.recipeList));
-    localStorage.setItem('favouritesRecipe', JSON.stringify(this.favouritesRecipeList));
+    localStorage.setItem(
+      'favouritesRecipe',
+      JSON.stringify(this.favouritesRecipeList)
+    );
     // closing the modal
     this.onCloseClick();
   }
@@ -199,7 +209,7 @@ export class RecipeDetails {
   ingredients: string;
   instructions: string;
   nutrition: string;
-  isFavourite:boolean;
+  isFavourite: boolean;
 
   constructor() {
     this.imageUrl = '';
@@ -209,6 +219,6 @@ export class RecipeDetails {
     this.instructions = '';
     this.nutrition = '';
     this.id = 0;
-    this.isFavourite=false;
+    this.isFavourite = false;
   }
 }
